@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
         <form action="xuly.php" method="POST">
             <label for="">Name</label>
             <input type="text" name="name" placeholder="Enter your name">
+            <span class="error"><?php echo $errorName; ?></span>
                 <br>
             <label for="">Email</label>
             <input type="text" name="email" placeholder="Enter your email">
@@ -24,4 +25,19 @@
             <input type="submit" value="Submit">
         </form>
 </body>
-</html>
+</html> -->
+
+<?php 
+  $cookieName = "user";
+  $cookieValue = "Nguyen Van A";
+  setcookie($cookieName, $cookieValue, time()+(86400), "/" );
+
+  // if(isset($_COOKIE[$cookieName])){
+  //   echo "Cookie " . $cookieName . " is set"
+  // }
+  if(isset($_COOKIE[$cookieName])) {
+    echo "Cookie " . $cookieName . "Đang tồn tại";
+  } else {
+    echo "Cookie " . $cookieName . "Không tồn tại";
+  }
+?>

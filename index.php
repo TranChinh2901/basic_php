@@ -28,16 +28,20 @@
 </html> -->
 
 <?php 
-  $cookieName = "user";
-  $cookieValue = "Nguyen Van A";
-  setcookie($cookieName, $cookieValue, time()+(86400), "/" );
+  // $cookieName = "user";
+  // $cookieValue = "Nguyen Van A";
+  // setcookie($cookieName, $cookieValue, time()+(86400), "/" );
 
-  // if(isset($_COOKIE[$cookieName])){
-  //   echo "Cookie " . $cookieName . " is set"
+  // // if(isset($_COOKIE[$cookieName])){
+  // //   echo "Cookie " . $cookieName . " is set"
+  // // }
+  // if(isset($_COOKIE[$cookieName])) {
+  //   echo "Cookie " . $cookieName . "Đang tồn tại";
+  // } else {
+  //   echo "Cookie " . $cookieName . "Không tồn tại";
   // }
-  if(isset($_COOKIE[$cookieName])) {
-    echo "Cookie " . $cookieName . "Đang tồn tại";
-  } else {
-    echo "Cookie " . $cookieName . "Không tồn tại";
-  }
+  session_start();
+  $_SESSION["name"] = "Nguyen Van A";
+
+  echo $_SESSION["name"];
 ?>

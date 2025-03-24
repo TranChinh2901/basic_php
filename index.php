@@ -40,8 +40,20 @@
   // } else {
   //   echo "Cookie " . $cookieName . "Không tồn tại";
   // }
-  session_start();
-  $_SESSION["name"] = "Nguyen Van A";
 
-  echo $_SESSION["name"];
+
+  // session_start();
+  // $_SESSION["name"] = "Nguyen Van A";
+
+  // echo $_SESSION["name"];
+
+
+
+
+  $ip = "217.0.0.1";
+  if(filter_var($ip, FILTER_VALIDATE_IP)){
+    echo "IP hop le";
+  } else {
+    echo "IP khong hop le";
+  }
 ?>

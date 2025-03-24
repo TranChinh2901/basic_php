@@ -50,10 +50,20 @@
 
 
 
-  $ip = "217.0.0.1";
-  if(filter_var($ip, FILTER_VALIDATE_IP)){
-    echo "IP hop le";
+  // $ip = "217.0.0.1";
+  // if(filter_var($ip, FILTER_VALIDATE_IP)){
+  //   echo "IP hop le";
+  // } else {
+  //   echo "IP khong hop le";
+  // }
+
+
+
+  $email = "Tranchinh@gmail.com";
+
+  if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+    echo "Email hop le";
   } else {
-    echo "IP khong hop le";
+    echo "Email khong hop le";
   }
 ?>

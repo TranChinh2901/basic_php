@@ -1,27 +1,31 @@
 <?php
     session_start();
-    if(isset($_SESSION['email'])) {
-        header('location:admin.php');
-    }
+    include 'connectdtb.php';
 
+    if(isset($_POST['dangnhap'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    if(isset($_POST['dangnhap'])) {
-       $email = $_POST['email'];
-       $password = $_POST['password'];
-       
+        //kiem tra ton tai hay khong
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = mysqli_query($conn, $sql);
+        $user = mysqli_fetch_assoc($result);
 
-        if($email == 'admin@gmail.com' && $password == '123456') {
+        if($password == $user['password']){
             $_SESSION['email'] = $email;
-            header('Location:admin.php');
-           
-        } else if ($email == 'chinh@gmail.com' || $email == 'dai@gmail.com' && $password == '123456') {
-            header('Location:user.php');
+            $_SESSION['role'] = $user['role'];
+            
+            if($user['role'] == 1) {
+                header('location:admin.php');
+            } else {
+                header('location:user.php');
+            }
+            exit();
         } else {
-            echo "failed to login";
+            echo "Dang nhap that bai";
         }
-    };
+    }
 ?>
-
 
 <form action="login.php" method="POST">
     <label>Email</label>
@@ -32,5 +36,9 @@
     <br>
     <button type="submit" name="dangnhap">
         Login
+    </button>
+    <a href="register.php"> register</a>
+    <button type="submit" name="resect">
+        Reset
     </button>
 </form>

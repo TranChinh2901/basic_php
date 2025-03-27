@@ -1,8 +1,19 @@
 <?php 
     session_start();
     if(!isset($_SESSION['email']) || $_SESSION['role'] != 1){
-        header(('location:user.php'));
+        header(('location:login.php'));
     }
+
+    include 'connectdtb.php';
+    $sql = "SELECT * FROM users";
+
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result) > 0 ) {
+        while($row = mysqli_fetch_array($result)){
+            echo $row['name'] . " - " . $row['email'] . " - " . $row['role'] . "<br>";
+        }
+    }
+   
 ?>
 
 <html>

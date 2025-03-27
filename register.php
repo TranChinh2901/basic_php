@@ -30,6 +30,7 @@
     <select name="role">
         <option value="0">User</option>
         <option value="1">Admin</option>
+        <option value="2">Manager</option>
     </select><br>
     <button type="submit" name="register">Đăng Ký</button>
 </form>

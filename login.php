@@ -17,6 +17,8 @@
             
             if($user['role'] == 1) {
                 header('location:admin.php');
+            } else if ($user['role'] == 2) {
+                header('location:manager.php');
             } else {
                 header('location:user.php');
             }

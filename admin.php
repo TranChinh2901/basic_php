@@ -13,7 +13,6 @@
             echo $row['name'] . " - " . $row['email'] . " - " . $row['role'] . "<br>";
         }
     }
-   
 ?>
 
 <html>

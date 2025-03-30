@@ -5,7 +5,7 @@
     }
 
     include 'connectdtb.php';
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM users LIMIT 0,3";
     $result = mysqli_query($conn, $sql);
     
 ?>

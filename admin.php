@@ -5,7 +5,11 @@
     }
 
     include 'connectdtb.php';
-    $sql = "SELECT * FROM users LIMIT 0,3";
+    //Tuỳ chỉnh số lượng hiển thị tk ở đâyđây
+    // $sql = "SELECT * FROM users LIMIT 0,3";
+
+    //RANDOM các sản phẩm và thứ tự xuất hiện( có thể đổi chỗ cho nhau khi reload page)
+    $sql = "SELECT * FROM users ORDER BY RAND()";
     $result = mysqli_query($conn, $sql);
     
 ?>

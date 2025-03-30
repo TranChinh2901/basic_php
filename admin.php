@@ -18,6 +18,14 @@
             body {
                 font-family: Arial, sans-serif;
             }
+            .flex_head{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .logout{
+                width: 160px;
+            }
             table {
                 width: 100%;
                 border-collapse: collapse;
@@ -49,8 +57,14 @@
 
     <body>
      <h1>Admin</h1>
-        <h2>Danh sách người dùng</h2>
-
+       <div class="flex_head">
+       <h2>Danh sách người dùng</h2>
+        <a href="components/add_user.php">
+            <button type="submit" name="dangxuat" class="logout">
+                Thêm người dùng
+            </button>
+        </a>
+       </div>
         <table>
             <tr>
                 <th>ID</th>
@@ -80,17 +94,6 @@
                     }
                 }
             ?>
-
-
         </table>
-
-       
-
-
-        <a href="logout.php">
-            <button type="submit" name="dangxuat">
-                Đăng xuất
-            </button>
-        </a>
     </body>
 </html>

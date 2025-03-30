@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    
 <?php
     include 'connectdtb.php';
 
@@ -15,7 +25,6 @@
         }
     }
 ?>
-
 <form action="register.php" method="POST">
     <label>Tên:</label>
     <input type="text" name="name" required><br>
@@ -27,10 +36,12 @@
     <input type="password" name="password" required><br>
     
     <label>Chọn Role:</label>
-    <select name="role">
+    <select name="role" class="role">
         <option value="0">User</option>
         <option value="1">Admin</option>
         <option value="2">Manager</option>
     </select><br>
     <button type="submit" name="register">Đăng Ký</button>
 </form>
+</body>
+</html>

@@ -50,6 +50,9 @@
 ?>
 
 <form action="login.php" method="POST">
+<?php if (!empty($error)): ?>
+        <p style="color: red;"><?php echo $error; ?></p>
+    <?php endif; ?>
    <div class="flex-label">
    <label>Email</label>
    <input type="text" name="email"> 
@@ -68,9 +71,7 @@
     <div class="if-you-dont-have-an-account">
         Nếu bạn chưa có tk >  <a href="register.php"> register</a>
     </div>
-    <?php if (!empty($error)): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
-    <?php endif; ?>
+   
 </form>
 
 

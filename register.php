@@ -26,6 +26,7 @@
     }
 ?>
 <form action="register.php" method="POST">
+    
     <label>Tên:</label>
     <input type="text" name="name" required><br>
     
